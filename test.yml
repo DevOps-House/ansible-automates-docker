@@ -2,6 +2,9 @@
 - hosts: all
   become: True
   become_method: su
+  gather_facts: False
   tasks:
-  - debug:
-      msg: "Container - {{ inventory_hostname }}"
+  - name: Install HTOP package
+    dnf:
+      name: htop
+      state: latest
