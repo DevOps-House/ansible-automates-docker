@@ -3,4 +3,5 @@
   become: True
   become_method: su
   tasks:
-  - raw: dnf install python2 -y
+  - debug:
+      msg: "Container - {{ inventory_hostname }}"
