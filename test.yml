@@ -6,3 +6,4 @@
   tasks:
   - name: Install HTOP package
     setup:
+    verbosity: 4
