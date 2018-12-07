@@ -6,4 +6,7 @@
   tasks:
   - name: Install HTOP package
     setup:
-    verbosity: 4
+    register: output
+    
+  - debug:
+      var: output
