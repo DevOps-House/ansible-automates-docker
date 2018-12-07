@@ -5,6 +5,4 @@
   gather_facts: False
   tasks:
   - name: Install HTOP package
-    dnf:
-      name: htop
-      state: latest
+    setup:
