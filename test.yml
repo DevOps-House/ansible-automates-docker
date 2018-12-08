@@ -4,7 +4,7 @@
   become_method: su
   gather_facts: False
   tasks:
-  - name: Install HTOP package
+  - name: Get Facts
     setup:
     register: output
     
