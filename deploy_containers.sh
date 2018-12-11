@@ -11,7 +11,7 @@ returncode=`echo $?`
 if [ $returncode -eq 0 ]; then
 a=$(docker images |grep -i $imagename |awk {'print $3'})
 for i in `seq $int` ; do docker run -it -d $a bash > /dev/null; done
-printf "\033[1;31mLaunched $int containers. Run "docker ps" to see the running containers.\033[0m\n"
+printf "\033[1;31mLaunched $int containers. Run 'docker ps' to see the running containers.\033[0m\n"
 else
 printf "\033[1;31mERROR: $imagename is not available in docker hub repository.\033[0m\n"
 fi
