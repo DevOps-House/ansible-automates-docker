@@ -1,9 +1,11 @@
 ---
 - name: Create a Docker container
   hosts: all
+  vars:
+    - container_name: awesome_ansible
   tasks:
   - name: Create a Docker container
     docker_container:
-      name: awesome_ansible
+      name: "{{ container_name }}"
       image: fedora
       state: absent
