@@ -10,3 +10,4 @@
       state: present
       detach: yes
       tty: yes
+      interactive: yes
