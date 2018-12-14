@@ -2,7 +2,7 @@
 - name: Create a Docker container
   hosts: all
   tasks:
-  - name: Create a Docker container
+  - name: Create a container
     docker_container:
       name: awesome_ansible
       image: fedora
