@@ -2,6 +2,11 @@
 - hosts: all
   become: True
   become_method: su
+  gather_facts: False
   tasks:
+  - name: Get Facts
+    setup:
+    register: output
+    
   - debug:
-      msg: "Container - {{ inventory_hostname }}"
+      var: output
