@@ -4,9 +4,7 @@
   become_method: su
   gather_facts: False
   tasks:
-  - name: Get Facts
-    setup:
-    register: output
-    
-  - debug:
-      var: output
+  - name: Configure motd file
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
