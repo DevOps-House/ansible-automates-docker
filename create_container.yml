@@ -9,3 +9,4 @@
       command: bash
       state: present
       detach: yes
+      tty: yes
