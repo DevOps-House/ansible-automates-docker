@@ -8,4 +8,4 @@
     copy:
       content: "Container {{inventory_hostname}} is managed by Ansible."
       dest: /etc/motd
-    when: inventory_hostname == container_name
+    when: inventory_hostname == container1
