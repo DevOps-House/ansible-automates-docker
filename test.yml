@@ -8,4 +8,4 @@
     copy:
       content: "Container {{inventory_hostname}} is managed by Ansible."
       dest: /etc/motd
-    when: inventory_hostname in groups.{{container_group}}|default([0])
+    when: inventory_hostname in groups.{{container_group}}.0
