@@ -1,9 +1,10 @@
 ---
 - hosts: all
   vars:
-    - container_name: awesome_ansible
     - container_image: fedora
     - container_command: bash
+    - count: 1
   tasks:
-  - command: "docker run -itd --name {{ container_name }} {{ container_image }} {{ container_command }}"
+  - command: "docker run -itd --name container{{ item }} {{ container_image }} {{ container_command }}"
+    with_sequence: count={{ count }}
 
