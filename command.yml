@@ -7,4 +7,10 @@
   tasks:
   - command: "docker run -itd --name container{{ item }} {{ container_image }} {{ container_command }}"
     with_sequence: count={{ count }}
+    
+  - command: "docker images -q {{ container_image }}"
+    register: output
+    
+  - set_fact:
+      container_group: "image_{{ output.stdout }}"
 
