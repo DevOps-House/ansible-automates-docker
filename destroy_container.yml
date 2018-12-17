@@ -2,10 +2,11 @@
 - name: Create a Docker container
   hosts: all
   vars:
-    - container_name: awesome_ansible
+    - count: 1
   tasks:
   - name: Create a Docker container
     docker_container:
-      name: "{{ container_name }}"
+      name: "container{{ item }}"
       image: fedora
       state: absent
+    with_sequence: count={{ count }}
