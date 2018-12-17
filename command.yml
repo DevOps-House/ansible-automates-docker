@@ -11,6 +11,7 @@
   - command: "docker images -q {{ container_image }}"
     register: output
     
-  - set_fact:
-      container_group: "image_{{ output.stdout }}"
+  - set_stats:
+      data:
+        container_group: "image_{{ output.stdout }}"
 
