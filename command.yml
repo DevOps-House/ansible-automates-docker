@@ -6,6 +6,7 @@
     - count: 1
   tasks:
   - command: "docker run -itd --name container{{ item }} {{ container_image }} {{ container_command }}"
+    ignore_errors: True
     with_sequence: count={{ count }}
     
   - command: "docker images -q {{ container_image }}"
