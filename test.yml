@@ -4,14 +4,56 @@
   become_method: su
   gather_facts: False
   tasks:
-  - name: Configure motd file
+  - name: Configure motd file 1
     copy:
       content: "Container {{inventory_hostname}} is managed by Ansible."
       dest: /etc/motd
     when: inventory_hostname in groups[ container_group ][0]
     
-  - name: Configure motd file
+  - name: Configure motd file 2
     copy:
       content: "Container {{inventory_hostname}} is managed by Ansible."
       dest: /etc/motd
     when: inventory_hostname in groups[ container_group ][1]
+
+  - name: Configure motd file 3
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
+    when: inventory_hostname in groups[ container_group ][2]
+    
+  - name: Configure motd file 4
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
+    when: inventory_hostname in groups[ container_group ][3]
+    
+  - name: Configure motd file 5
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
+    when: inventory_hostname in groups[ container_group ][4]
+    
+  - name: Configure motd file 6
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
+    when: inventory_hostname in groups[ container_group ][5]
+    
+  - name: Configure motd file 7
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
+    when: inventory_hostname in groups[ container_group ][6]
+    
+  - name: Configure motd file 8
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
+    when: inventory_hostname in groups[ container_group ][7]
+    
+  - name: Configure motd file 9
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
+    when: inventory_hostname in groups[ container_group ][8]    
