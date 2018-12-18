@@ -9,3 +9,9 @@
       content: "Container {{inventory_hostname}} is managed by Ansible."
       dest: /etc/motd
     when: inventory_hostname in groups[ container_group ][0]
+    
+  - name: Configure motd file
+    copy:
+      content: "Container {{inventory_hostname}} is managed by Ansible."
+      dest: /etc/motd
+    when: inventory_hostname in groups[ container_group ][1]
