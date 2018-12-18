@@ -14,5 +14,5 @@
     
   - set_stats:
       data:
-        container_group: "image_{{ output.stdout }}"
+        container_group: "image_{{ container_image }}"
 
