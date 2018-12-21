@@ -1,15 +1,15 @@
 ---
-- name: Create a Docker container
-  hosts: all
+- hosts: all
   vars:
-    - container_name: awesome_ansible
+    - container_image: fedora
+    - container_command: bash
+    - count: 1
+  ignore_errors: True
   tasks:
-  - name: Create a container
-    docker_container:
-      name: "{{ container_name }}"
-      image: fedora
-      command: bash
-      state: present
-      detach: yes
-      tty: yes
-      interactive: yes
+  - command: "docker run -itd --name container{{ item }} {{ container_image }} {{ container_command }}"
+    with_sequence: count={{ count }}
+    
+  - set_stats:
+      data:
+        container_group: "image_{{ container_image }}"
+
