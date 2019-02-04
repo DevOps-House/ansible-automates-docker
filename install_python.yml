@@ -1,6 +1,6 @@
 ---
 - hosts: all
   become: True
-  become_method: su
+  remote_user: root
   tasks:
   - raw: apk add python2
