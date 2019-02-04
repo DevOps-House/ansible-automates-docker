@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+  - name: Display date
+    command: date
+
+  - name: Display locale
+    shell: locale | grep LANG
+
+  - name: Create a file in /tmp and write any content to it.
+    copy:
+      content: "Ansiblers are Awesome"
+      dest: /tmp/teamansible
+
+  - name: Now delete the creted file.
+    file:
+      path: /tmp/teamansible
