@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: True
+  become_method: su
+  tasks:
+  - raw: apk add python2
