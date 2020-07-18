@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: "{{ target }}"  #all
   vars:
     - container_image: fedora
     - container_command: bash
